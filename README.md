@@ -10,6 +10,7 @@ Also, the following environment variables need to be configured:
 EXEC_PATH={path to the binary created from this project}
 TRANSIP_USERNAME={your transip username}
 TRANSIP_PRIVATE_KEY_PATH={path to the private key file}
+OVERRIDE_DNS_TTL={optional: override dns entry TTL value}
 ```
 
 And, of course, your `traefik.toml` file needs:

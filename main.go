@@ -71,6 +71,11 @@ func main() {
 
 	// Create the new DNS entry
 	ttl, err := strconv.Atoi(args[3])
+	ttlOverride := os.Getenv("OVERRIDE_DNS_TTL")
+	if ttlOverride != "" {
+		log.Printf("Using override TTL to set DNS record: %s", ttlOverride)
+		ttl, err = strconv.Atoi(ttlOverride)
+	}
 	if err != nil {
 		mutex.Unlock()
 		log.Fatal("Unable to convert TTL to integer")
